@@ -76,7 +76,7 @@ public class ClientLibUseObject implements Use {
     /**
      * HTML markup for stylesheets.
      */
-    private static final String TAG_STYLESHEET = "<link rel=\"preload stylesheet\" href=\"%s\"%s type=\"text/css\">";
+    private static final String TAG_STYLESHEET = "<link rel=\"preload stylesheet\" href=\"%s\"%s type=\"text/css\" as=\"style\" >";
 
     /**
      * HTML markup for onload attribute of script element.
