@@ -1,4 +1,4 @@
-package apps.clientlib_async.sightly.templates;
+package libs.granite.sightly.templates;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -76,7 +76,7 @@ public class ClientLibUseObject implements Use {
     /**
      * HTML markup for stylesheets.
      */
-    private static final String TAG_STYLESHEET = "<link rel=\"stylesheet\" href=\"%s\"%s type=\"text/css\">";
+    private static final String TAG_STYLESHEET = "<link rel=\"preload stylesheet\" href=\"%s\"%s type=\"text/css\">";
 
     /**
      * HTML markup for onload attribute of script element.
@@ -217,7 +217,7 @@ public class ClientLibUseObject implements Use {
             }
 
             for (ClientLibrary lib : libs) {
-                String path = getIncludePath(request, lib, libraryType, htmlLibraryManager.isMinifyEnabled());
+                String path = getIncludePath(request, lib, libraryType, true);
 
                 if (path != null) {
                     out.format(libraryType.equals(LibraryType.JS) ? TAG_JAVASCRIPT : TAG_STYLESHEET, path, attribute);
